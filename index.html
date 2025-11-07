@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoneyMaker Pro - Generate Online Income</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
+        body { background: #f8f9fa; color: #333; line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Header */
+        header { background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 1rem 0; position: fixed; width: 100%; top: 0; z-index: 1000; }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.8rem; font-weight: bold; }
+        .logo span { color: #ffd700; }
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-left: 2rem; }
+        nav ul li a { color: white; text-decoration: none; font-weight: 500; transition: color 0.3s; }
+        nav ul li a:hover { color: #ffd700; }
+        
+        /* Hero */
+        .hero { background: linear-gradient(rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9)); color: white; padding: 150px 0 100px; text-align: center; }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.3rem; margin-bottom: 2rem; max-width: 600px; margin: 0 auto 2rem; }
+        .btn { display: inline-block; background: #ff6b6b; color: white; padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: bold; transition: all 0.3s ease; }
+        .btn:hover { background: #ff5252; transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+        
+        /* Income Methods */
+        .income-methods { padding: 100px 0; background: white; }
+        .section-title { text-align: center; margin-bottom: 3rem; }
+        .section-title h2 { font-size: 2.5rem; color: #333; margin-bottom: 1rem; }
+        .section-title p { color: #666; font-size: 1.1rem; }
+        .methods-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
+        .method-card { background: #f8f9fa; padding: 2.5rem; border-radius: 15px; text-align: center; transition: transform 0.3s ease; border: 1px solid #e9ecef; }
+        .method-card:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
+        .method-icon { font-size: 3rem; color: #667eea; margin-bottom: 1.5rem; }
+        .method-card h3 { font-size: 1.5rem; margin-bottom: 1rem; color: #333; }
+        .method-card p { color: #666; margin-bottom: 1.5rem; }
+        
+        /* Products */
+        .products { padding: 100px 0; background: #f8f9fa; }
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .product-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: transform 0.3s ease; }
+        .product-card:hover { transform: translateY(-5px); }
+        .product-image { height: 200px; background: linear-gradient(45deg, #667eea, #764ba2); display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; }
+        .product-content { padding: 1.5rem; }
+        .product-content h3 { font-size: 1.3rem; margin-bottom: 0.5rem; color: #333; }
+        .product-rating { color: #ffd700; margin-bottom: 0.5rem; }
+        .product-price { font-size: 1.5rem; font-weight: bold; color: #667eea; margin-bottom: 1rem; }
+        .product-description { color: #666; margin-bottom: 1.5rem; font-size: 0.95rem; }
+        
+        /* CTA */
+        .cta { padding: 100px 0; background: linear-gradient(135deg, #667eea, #764ba2); color: white; text-align: center; }
+        .cta h2 { font-size: 2.5rem; margin-bottom: 1.5rem; }
+        .cta p { font-size: 1.2rem; margin-bottom: 2rem; max-width: 600px; margin: 0 auto 2rem; }
+        .btn-light { background: white; color: #667eea; }
+        .btn-light:hover { background: #f8f9fa; }
+        
+        /* Footer */
+        footer { background: #333; color: white; padding: 3rem 0 1rem; }
+        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem; }
+        .footer-column h3 { color: #ffd700; margin-bottom: 1.5rem; font-size: 1.3rem; }
+        .footer-column ul { list-style: none; }
+        .footer-column ul li { margin-bottom: 0.8rem; }
+        .footer-column ul li a { color: #ccc; text-decoration: none; transition: color 0.3s; }
+        .footer-column ul li a:hover { color: #ffd700; }
+        .copyright { text-align: center; padding-top: 2rem; border-top: 1px solid #444; color: #999; }
+        
+        /* Mobile */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .nav-container { flex-direction: column; text-align: center; }
+            nav ul { margin-top: 1rem; flex-direction: column; }
+            nav ul li { margin: 0.5rem 0; }
+            .hero { padding: 120px 0 80px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <div class="logo">Money<span>Maker</span> Pro</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#methods">Methods</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#start">Start Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Start Making Real Money Online</h1>
+            <p>Proven methods to generate passive income and achieve financial freedom. No experience required.</p>
+            <a href="#methods" class="btn">Discover Methods</a>
+        </div>
+    </section>
+
+    <section class="income-methods" id="methods">
+        <div class="container">
+            <div class="section-title">
+                <h2>3 Proven Income Methods</h2>
+                <p>Start with any of these methods and see results quickly</p>
+            </div>
+            <div class="methods-grid">
+                <div class="method-card">
+                    <div class="method-icon">💰</div>
+                    <h3>Affiliate Marketing</h3>
+                    <p>Earn commissions promoting products. We provide training and high-paying affiliate programs.</p>
+                    <a href="#" class="btn">Start Today</a>
+                </div>
+                <div class="method-card">
+                    <div class="method-icon">📱</div>
+                    <h3>Ad Revenue</h3>
+                    <p>Monetize your content with display ads. Learn optimization strategies for maximum earnings.</p>
+                    <a href="#" class="btn">Start Today</a>
+                </div>
+                <div class="method-card">
+                    <div class="method-icon">🎓</div>
+                    <h3>Digital Products</h3>
+                    <p>Create and sell courses, ebooks, templates. Package your knowledge into income.</p>
+                    <a href="#" class="btn">Start Today</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Recommended Tools & Courses</h2>
+                <p>Everything you need to start earning immediately</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">📚</div>
+                    <div class="product-content">
+                        <h3>Affiliate Mastery</h3>
+                        <div class="product-rating">★★★★★</div>
+                        <div class="product-price">$97</div>
+                        <p class="product-description">Complete guide to building profitable affiliate business from zero.</p>
+                        <a href="#" class="btn">Get Access</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">🌐</div>
+                    <div class="product-content">
+                        <h3>Website Builder</h3>
+                        <div class="product-rating">★★★★☆</div>
+                        <div class="product-price">$149/year</div>
+                        <p class="product-description">Create professional money-making websites without coding.</p>
+                        <a href="#" class="btn">Get Access</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">📧</div>
+                    <div class="product-content">
+                        <h3>Email Marketing</h3>
+                        <div class="product-rating">★★★★★</div>
+                        <div class="product-price">$29/month</div>
+                        <p class="product-description">Advanced email platform with automation and analytics.</p>
+                        <a href="#" class="btn">Get Access</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="start">
+        <div class="container">
+            <h2>Begin Your Money-Making Journey Today</h2>
+            <p>Join 10,000+ successful members who started with zero experience and now generate consistent online income.</p>
+            <a href="#" class="btn btn-light">Start Earning Now</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>MoneyMaker Pro</h3>
+                    <p>Your partner in building sustainable online income streams.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#methods">Income Methods</a></li>
+                        <li><a href="#products">Tools & Courses</a></li>
+                        <li><a href="#start">Get Started</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 MoneyMaker Pro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
